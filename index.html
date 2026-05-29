@@ -1,29 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maker Movement Registry</title>
+  <style>
+    :root {
+      --bg-color: #fcfbfa;
+      --text-main: #2d3134;
+      --text-muted: #62676b;
+      --accent: #d47a55; /* Warm terracotta/clay tone */
+      --accent-hover: #b8623f;
+      --card-bg: #ffffff;
+      --border-color: #e6e4e2;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    header {
+      margin-bottom: 48px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    /* Process List Styling */
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 40px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    /* Custom numbers for the list */
+    li::before {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--accent);
+      background-color: #f5ece8;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    li:nth-child(1)::before { content: "1"; }
+    li:nth-child(2)::before { content: "2"; }
+    li:nth-child(3)::before { content: "3"; }
+
+    /* Action Links Layout */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 500px) {
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-card {
+      display: block;
+      padding: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .btn-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 122, 85, 0.08);
+    }
+
+    .btn-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; max-width: 800px; margin: auto; padding: 40px;">
+<body>
 
-  <h1>Maker Movement Registry</h1>
+  <header>
+    <h1>Maker Movement Registry</h1>
+    <p class="tagline">A distributed system of people making simple objects from local materials.</p>
+  </header>
 
-  <p>A distributed system of people making simple objects from local materials.</p>
+  <main>
+    <h2>What this is</h2>
+    <p>This is a public record of objects being made by hand. Each object holds a record of its maker, the method used to create it, and the unique story behind it.</p>
 
-  <h2>What this is</h2>
-  <p>This is a public record of objects being made by people. Each object has a maker, a method, and a story.</p>
+    <h2>Start making</h2>
+    <ul>
+      <li>Make a simple object using local resources (like a coaster, a tray, or a utensil).</li>
+      <li>Document your process and submit it via our quick form.</li>
+      <li>Watch your creation join the global, decentralized public registry.</li>
+    </ul>
 
-  <h2>Start making</h2>
-  <ul>
-    <li>Make a simple object (coaster, tray, etc.)</li>
-    <li>Submit it via our form</li>
-    <li>It appears in the public registry</li>
-  </ul>
+    <h2>Explore & Contribute</h2>
+    <div class="action-grid">
+      <a href="YOUR_GOOGLE_FORM_LINK" class="btn-card">
+        <h3>Submit Your Work →</h3>
+        <p>Share your latest object, method, and story with the registry.</p>
+      </a>
 
-  <h2>Submit your work</h2>
-  <p><a href="YOUR_GOOGLE_FORM_LINK">Submit an object</a></p>
-
-  <h2>View database</h2>
-  <p><a href="https://hallowed-chalk-d8e.notion.site/Maker-Movement-Database-36e15bad770080f99dd8dc2b00a80042?source=copy_link">Browse makers & objects</a></p>
+      <a href="https://hallowed-chalk-d8e.notion.site/Maker-Movement-Database-36e15bad770080f99dd8dc2b00a80042?source=copy_link" target="_blank" class="btn-blank btn-card">
+        <h3>Browse the Database →</h3>
+        <p>Explore the growing ecosystem of makers and local objects.</p>
+      </a>
+    </div>
+  </main>
 
 </body>
 </html>
